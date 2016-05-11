@@ -17,4 +17,12 @@ Step 5
   NB: for this excersise I have included the require('pg') in the sql_runner file.
 Step 6
   Populated car.rb and dealer.rb files with initial details - require.., class, initialize.
+  Populated with Save, Update, Delete instance methods and List class methods
+Step 7
+  Populated console.rb with dealers and related cars
+  Ran console.rb
+  Fixed errors
+  cleared tables
+  ran console again
+
 
