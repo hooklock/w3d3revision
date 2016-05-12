@@ -1,4 +1,3 @@
-require('pg')
 require_relative('../db/sql_runner')
 require_relative('./car')
 
@@ -35,7 +34,23 @@ class Dealer
 
   def self.all()
     sql = "SELECT * FROM dealerships ORDER BY id;"
+    return Dealer.map_items(sql)
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM dealerships"
+    SqlRunner.run(sql)
+  end
+
+  def self.map_items(sql)
+    dealerships = SqlRunner.run( sql )
     result = dealerships.map { |dealer| Dealer.new(dealer) }
+    return result
+  end
+
+  def self.map_item(sql)
+    result = Dealer.map_items(sql)
+    return result.first
   end
 
 end
